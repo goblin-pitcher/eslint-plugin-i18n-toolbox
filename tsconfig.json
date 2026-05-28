@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types", "./node_modules/vue-eslint-parser"]
+  }
+}

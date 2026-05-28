@@ -1,0 +1,11 @@
+node_modules/
+.git/
+.env
+coverage/
+.vscode/
+src/
+docs/
+tests/
+.pnpm-lock.yaml
+tsconfig.json
+.eslint*
