@@ -1,27 +1,55 @@
 {
-  "name": "i18n-collector",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "eslint-plugin-i18n-toolbox",
+  "version": "1.0.34",
+  "description": "A powerful ESLint plugin streamlining i18n migration and maintenance. Automates extraction of Chinese strings into structured locale JSON files, enforces wrapping with custom i18n methods via fixable rules, and validates key consistency across codebase.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "weixiao21",
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "files": [
+    "bin",
+    "lib",
+    "scripts",
+    "README.md"
+  ],
   "bin": {
-    "i18n-collect": "bin/i18n-cli.js"
+    "i18n-toolbox": "bin/i18n-toolbox.js"
   },
   "scripts": {
-    "test": "node .\\bin\\i18n-cli.js collect -d .\\examples\\ -f false"
+    "dev": "tsc --project ./src/tsconfig.json --watch",
+    "build": "tsc --project ./src/tsconfig.json",
+    "lint": "eslint . --color",
+    "test": "mocha tests/lib/rules/**/*.js --recursive"
   },
-  "keywords": [],
-  "author": "xiao.wei",
-  "license": "ISC",
   "dependencies": {
-    "@babel/generator": "^7.13.9",
-    "@babel/parser": "^7.13.13",
-    "@babel/traverse": "^7.13.13",
-    "@babel/types": "^7.13.14",
-    "htmlparser2": "^6.1.0",
-    "lodash": "^4.17.21",
-    "posthtml": "^0.15.1"
+    "dongdesign-b-log": "0.0.7-alpha.4",
+    "requireindex": "^1.2.0",
+    "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
-    "yargs-parser": "^20.2.7"
-  }
+    "@types/eslint-scope": "^3.7.7",
+    "@types/node": "^20.11.25",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "@typescript-eslint/utils": "^7.1.1",
+    "eslint": "^8.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-eslint-plugin": "^4.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^9.1.3",
+    "typescript": "^5.4.2",
+    "vue-eslint-parser": "^10.1.1"
+  },
+  "engines": {
+    "node": "12.x || 14.x || >= 16"
+  },
+  "peerDependencies": {
+    "eslint": ">=6"
+  },
+  "license": "MIT"
 }
